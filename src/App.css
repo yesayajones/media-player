@@ -240,3 +240,111 @@ body {
 	border-radius: 40px;
 	cursor: pointer;
 }
+
+/* Playlist styling  */
+
+.playlist {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	right: -100%;
+	padding: 30px 0;
+	background: var(--background);
+	z-index: 3;
+	transition: 1s;
+	overflow: auto;
+	color: white;
+}
+
+.playlist.active {
+	right: 0;
+}
+
+.title {
+	font-weight: 300;
+	font-size: 40px;
+	text-align: center;
+	margin-top: 15px;
+	text-transform: capitalize;
+	margin-bottom: 30px;
+}
+
+.queue {
+	width: 100%;
+	height: 80px;
+	padding: 0 30px;
+	display: flex;
+	align-items: center;
+	border-top: 2px solid var(--alpha-color);
+}
+
+.queue .track {
+	display: grid;
+	grid-template-columns: 1fr 1fr 4fr 4fr 2fr 1fr;
+}
+
+.queue .track .track-number {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	height: 60px;
+}
+
+.queue-cover {
+	width: 60px;
+	height: 60px;
+	border-radius: 10px;
+	overflow: hidden;
+	margin-right: 20px;
+	position: relative;
+}
+
+.queue-cover img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.queue-cover i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 30px;
+	color: var(--primary-color);
+	display: none;
+}
+
+.queue {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.queue.active i {
+	display: block;
+}
+
+.queue .name {
+	font-size: 14px;
+	text-transform: capitalize;
+	display: flex;
+	flex-direction: column;
+	padding-top: 7px;
+	height: 53px;
+}
+
+.queue .name .song-name {
+	margin: 0;
+	vertical-align: bottom;
+}
+
+.queue .album-name,
+.love-track,
+.track-length {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
