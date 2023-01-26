@@ -6,7 +6,7 @@ function Track(props) {
 		<div className='track'>
 			<div className='track-number'>{props.num}</div>
 			<div className='queue-cover'>
-				<img src={`assets/images/cover ${props.num}.png`} alt='' />
+				<img src={props.cover} alt='' />
 				<FaPlay />
 			</div>
 			<div className='name'>

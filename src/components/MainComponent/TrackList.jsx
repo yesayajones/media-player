@@ -1,4 +1,18 @@
 import Track from './Track';
+import songs from '../../data';
+
+function createSong(song) {
+	return (
+		<Track
+			num={song.num}
+			name={song.name}
+			artist={song.artist}
+			cover={song.cover}
+			album={song.album}
+			length={song.length}
+		/>
+	);
+}
 
 function TrackList() {
 	return (
@@ -7,22 +21,7 @@ function TrackList() {
 
 			<h1 className='title'>playlist</h1>
 
-			<div className='queue active'>
-				<Track
-					num={1}
-					name='Cool'
-					artist='Dua Lipas'
-					album='Future Nostalgia'
-					length='3:30'
-				/>
-				<Track />
-				<Track />
-				<Track />
-				<Track />
-				<Track />
-				<Track />
-				<Track />
-			</div>
+			<div className='queue active'>{songs.map(createSong)}</div>
 		</section>
 	);
 }
