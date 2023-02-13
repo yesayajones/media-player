@@ -1,17 +1,12 @@
-import SideBar from './components/SideBar/SideBar';
-import MainComponent from './components/MainComponent/MainComponent';
+import Home from './components/MainComponent/Home';
 import './normal.css';
 import './App.css';
 import TrackList from './components/MainComponent/TrackList';
 
+var closed = true;
+
 const App = () => {
-	return (
-		<>
-			<SideBar />
-			<MainComponent />
-			{/* <TrackList /> */}
-		</>
-	);
+	return <>{closed ? <Home /> : <TrackList />}</>;
 };
 
 export default App;

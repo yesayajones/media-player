@@ -1,6 +1,14 @@
+import { useState } from 'react';
+
 function Item(props) {
+	const [closed, setClosed] = useState(true);
+
+	function handleClick() {
+		setClosed(false);
+	}
+
 	return (
-		<div className='item'>
+		<div className='item' onClick={handleClick}>
 			<img src={props.img} alt='' />
 			<div className='play'>
 				<span className='fa fa-play'></span>
